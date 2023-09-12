@@ -1,6 +1,7 @@
 import ballerina/http;
 
 configurable string xxx = "World";
+configurable string yyy = "City";
 
 # A service representing a network-accessible API
 # bound to port `9090`.
@@ -14,6 +15,6 @@ service / on new http:Listener(9090) {
         if name is "" {
             return error("name should not be empty!");
         }
-        return "Hello, " + name + xxx;
+        return "Hello, " + name + " " + xxx + " " + yyy;
     }
 }
